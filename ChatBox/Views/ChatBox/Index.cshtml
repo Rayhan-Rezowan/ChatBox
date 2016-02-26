@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div>
+                    <h3>To Start Chat, Please Enter Your Name</h3>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-8">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="name" id="name" value="" />
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="errMsg"></div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-8">
+                        <button class="btn btn-default" type="submit" onclick="userVerification()">Start</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+        <div class="row hr"></div>
+        <div class="row message">
+            <ul id="chatMessages">
+            </ul>
+        </div>
+        <div class="form-group">
+			<label class="col-md-4 control-label">Message</label>
+			 <div class="col-md-8">                                            
+				 <div class="input-group">
+					 <textarea rows="2" class="form-control" name="messege" id="messege" value=""></textarea>
+				 </div>
+			</div>
+	    </div>
+        <div class="col-md-8">
+            <button class="btn btn-default" type="submit" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+</div>
+
+
+@section styles {
+    @Styles.Render("~/bootstrap")
+}
+
+@section scripts {
+    @Scripts.Render("~/Scripts/ChatBox.js")
+}
